@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="warning" file="HDLCompiler" num="751" delta="unknown" >"E:/University/LC Lab/Codes/LC_Lab_10/fsm.v" Line 39: Redeclaration of ansi port <arg fmt="%s" index="1">state</arg> is not allowed
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="751" delta="unknown" >"E:/University/LC Lab/Codes/LC_Lab_10/fsm.v" Line 40: Redeclaration of ansi port <arg fmt="%s" index="1">dout</arg> is not allowed
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="751" delta="unknown" >"E:/University/LC Lab/Codes/LC_Lab_10/fsm.v" Line 41: Redeclaration of ansi port <arg fmt="%s" index="1">en_right</arg> is not allowed
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"E:/University/LC Lab/Codes/LC_Lab_10/system.v" Line 31: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">rst</arg>&gt;. Formal port size is <arg fmt="%d" index="2">1</arg>-bit while actual signal size is <arg fmt="%d" index="1">32</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"E:/University/LC Lab/Codes/LC_Lab_10/system.v" Line 30: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">rst</arg>&gt;. Formal port size is <arg fmt="%d" index="2">1</arg>-bit while actual signal size is <arg fmt="%d" index="1">32</arg>-bit.
+</msg>
+
+</messages>
+

@@ -1,0 +1,27 @@
+Running: D:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -o E:/University/LC Lab/Codes/LC_Lab_10/system_test_isim_beh.exe -prj E:/University/LC Lab/Codes/LC_Lab_10/system_test_beh.prj work.system_test work.glbl 
+ISim P.20131013 (signature 0x7708f090)
+Number of CPUs detected in this system: 8
+Turning on mult-threading, number of parallel sub-compilation jobs: 16 
+Determining compilation order of HDL files
+Analyzing Verilog file "E:/University/LC Lab/Codes/LC_Lab_10/register.v" into library work
+Analyzing Verilog file "E:/University/LC Lab/Codes/LC_Lab_10/fsm.v" into library work
+WARNING:HDLCompiler:751 - "E:/University/LC Lab/Codes/LC_Lab_10/fsm.v" Line 39: Redeclaration of ansi port state is not allowed
+WARNING:HDLCompiler:751 - "E:/University/LC Lab/Codes/LC_Lab_10/fsm.v" Line 40: Redeclaration of ansi port dout is not allowed
+WARNING:HDLCompiler:751 - "E:/University/LC Lab/Codes/LC_Lab_10/fsm.v" Line 41: Redeclaration of ansi port en_right is not allowed
+Analyzing Verilog file "E:/University/LC Lab/Codes/LC_Lab_10/system.v" into library work
+Analyzing Verilog file "E:/University/LC Lab/Codes/LC_Lab_10/system_test.v" into library work
+Analyzing Verilog file "D:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Starting static elaboration
+WARNING:HDLCompiler:189 - "E:/University/LC Lab/Codes/LC_Lab_10/system.v" Line 31: Size mismatch in connection of port <rst>. Formal port size is 1-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "E:/University/LC Lab/Codes/LC_Lab_10/system.v" Line 30: Size mismatch in connection of port <rst>. Formal port size is 1-bit while actual signal size is 32-bit.
+Completed static elaboration
+Compiling module register
+Compiling module fsm
+Compiling module system
+Compiling module system_test
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Compiled 5 Verilog Units
+Built simulation executable E:/University/LC Lab/Codes/LC_Lab_10/system_test_isim_beh.exe
+Fuse Memory Usage: 28164 KB
+Fuse CPU Usage: 296 ms

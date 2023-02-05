@@ -1,0 +1,13 @@
+ISim log file
+Running: E:\University\LC Lab\Codes\LC_Lab_10\system_test_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb E:/University/LC Lab/Codes/LC_Lab_10/system_test_isim_beh.wdb 
+ISim P.20131013 (signature 0x7708f090)
+This is a Full version of ISim.
+WARNING:  For instance s/right_reg/, width 1 of formal port rst is not equal to width 32 of actual constant.
+WARNING:  For instance s/left_reg/, width 1 of formal port rst is not equal to width 32 of actual constant.
+Time resolution is 1 ps
+# onerror resume
+# wave add /
+# run 1000 ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+Stopped at time : 395 ns : File "E:/University/LC Lab/Codes/LC_Lab_10/system_test.v" Line 60
