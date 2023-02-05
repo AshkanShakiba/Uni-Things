@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "D:/lectures/lab/Lab_9/TB_CPU8bit_isim_beh.exe" -prj "D:/lectures/lab/Lab_9/TB_CPU8bit_beh.prj" "work.TB_CPU8bit" 

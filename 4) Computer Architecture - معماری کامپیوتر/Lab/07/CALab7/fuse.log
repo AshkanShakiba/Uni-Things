@@ -1,0 +1,19 @@
+Running: E:\ise_files\New_folder\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -o C:/Users/admin/Downloads/Telegram Desktop/az7/az7/ram_isim_beh.exe -prj C:/Users/admin/Downloads/Telegram Desktop/az7/az7/ram_beh.prj work.ram 
+ISim P.20131013 (signature 0x7708f090)
+Number of CPUs detected in this system: 8
+Turning on mult-threading, number of parallel sub-compilation jobs: 16 
+Determining compilation order of HDL files
+Parsing VHDL file "C:/Users/admin/Downloads/Telegram Desktop/az7/az7/ram.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package numeric_std
+Compiling package math_real
+Compiling architecture behavioral of entity ram
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 5 VHDL Units
+Built simulation executable C:/Users/admin/Downloads/Telegram Desktop/az7/az7/ram_isim_beh.exe
+Fuse Memory Usage: 36924 KB
+Fuse CPU Usage: 593 ms

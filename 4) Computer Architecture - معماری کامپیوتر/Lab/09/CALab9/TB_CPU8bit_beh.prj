@@ -1,0 +1,2 @@
+vhdl work "CPU8bit.vhd"
+vhdl work "TB_CPU8bit.vhd"

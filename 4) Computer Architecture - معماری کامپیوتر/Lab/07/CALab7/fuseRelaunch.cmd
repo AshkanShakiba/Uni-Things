@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "C:/Users/admin/Downloads/Telegram Desktop/az7/az7/ram_isim_beh.exe" -prj "C:/Users/admin/Downloads/Telegram Desktop/az7/az7/ram_beh.prj" "work.ram" 
