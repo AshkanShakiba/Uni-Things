@@ -1,0 +1,94 @@
+[
+  {
+    "name": "Library",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "stores name and address ",
+      "stores list of books and users",
+      "prints list of books and users",
+      "stores a list of borrowings",
+      "print list of borrowings",
+      "check and add a new user",
+      "remove a user",
+      "check and add a new book",
+      "remove a book",
+      "add new borrowings",
+      "remove a borrowing",
+      "check borrowings and send email to delayed borrowers",
+      "searching for a special book",
+      ""
+    ],
+    "collaborators": [
+      "Book",
+      "User",
+      "Borrowing",
+      "Date"
+    ]
+  },
+  {
+    "name": "Book",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "stores title and author",
+      "print title and author"
+    ],
+    "collaborators": [
+      "Library",
+      "User",
+      "Borrowing"
+    ]
+  },
+  {
+    "name": "User",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "stores name, email, membership number and registery date",
+      "print name, email, membership number and registery date",
+      "stores a list of borrowed books of user",
+      "add a new borrowing",
+      "remove a borrowing"
+    ],
+    "collaborators": [
+      "Library",
+      "Book",
+      "Borrowing",
+      "Date"
+    ]
+  },
+  {
+    "name": "Borrowing",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "stores the borrower, the borrowed book, start date and end date",
+      "print the borrower, the borrowed book, start date and end date"
+    ],
+    "collaborators": [
+      "Library",
+      "Book",
+      "User",
+      "Date"
+    ]
+  },
+  {
+    "name": "Date",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "stores year, month, day and time by hour"
+    ],
+    "collaborators": [
+      "Library",
+      "User",
+      "Borrowing"
+    ]
+  }
+]
