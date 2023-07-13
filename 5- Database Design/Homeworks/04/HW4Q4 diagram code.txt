@@ -1,0 +1,46 @@
+// https://dbdiagram.io/d
+
+Table Manufacturer {
+  name varchar [primary key]
+  city varchar
+  street varchar
+}
+
+Table Customer {
+  ID integer [primary key]
+  name varchar 
+}
+
+Table Part {
+  part_num integer [primary key]
+  description varchar
+}
+
+Table Order {
+  ID integer [primary key]
+  order_num integer [primary key]
+}
+
+Table contains {
+  part_num integer [primary key]
+  ID integer [primary key]
+  order_num integer [primary key]
+  quantity float
+}
+
+Table made_by {
+  name varchar [primary key]
+  part_num varchar [primary key]
+}
+
+Ref: made_by.name > Manufacturer.name
+
+Ref: made_by.part_num > Part.part_num
+
+Ref: contains.part_num > Part.part_num
+
+Ref: contains.ID > Order.ID
+
+Ref: contains.order_num > Order.order_num
+
+Ref: Order.ID > Customer.ID

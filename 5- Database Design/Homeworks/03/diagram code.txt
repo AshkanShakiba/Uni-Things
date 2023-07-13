@@ -1,0 +1,85 @@
+// https://dbdiagram.io/d
+
+Table Customers {
+  CustomerID integer [primary key]
+  CustomerName varchar
+  ContactName varchar
+  Country varchar
+}
+
+Table Orders {
+  OrderID integer [primary key]
+  CustomerID integer
+  OrderDate timestamp
+  ShipCity varchar
+  ShipCountry varchar
+}
+
+Table OrderDetails {
+  OrderDetailID integer [primary key]
+  OrderID integer
+  ProductID integer
+  Quantity integer
+}
+
+Table Products {
+  ProductID integer [primary key]
+  ProductName varchar
+  SupplierID integer
+  CategoryID integer
+  UnitPrice float
+}
+
+Table Suppliers {
+  SupplierID integer [primary key]
+  SupplierName varchar
+  ContactName varchar
+  Country varchar
+}
+
+Table Categories {
+  CategoryID integer [primary key]
+  CategoryName varchar
+  Description varchar
+}
+
+Table Employees {
+  EmployeeID integer [primary key]
+  LastName varchar
+  FirstName varchar
+  BirthDate timestamp
+  Photo binary
+  Notes varchar
+}
+
+Table Territories {
+  TerritoryID integer [primary key]
+  TerritoryName varchar
+  RegionID integer
+}
+
+Table EmployeeTerritories {
+  EmployeeID integer
+  TerritoryID integer
+}
+
+Table Regions {
+  RegionID integer [primary key]
+  RegionName varchar
+}
+
+Ref: Orders.CustomerID > Customers.CustomerID
+
+Ref: OrderDetails.OrderID > Orders.OrderID
+
+Ref: OrderDetails.ProductID > Products.ProductID
+
+Ref: Products.SupplierID > Suppliers.SupplierID
+
+Ref: Products.CategoryID > Categories.CategoryID
+
+Ref: Territories.RegionID > Regions.RegionID
+
+Ref: EmployeeTerritories.EmployeeID > Employees.EmployeeID
+
+Ref: EmployeeTerritories.TerritoryID > Territories.TerritoryID

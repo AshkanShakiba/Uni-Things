@@ -1,0 +1,140 @@
+1.
+The list of all the entity sets: (weak entities are colored gray) 
+customer
+free service
+special service -> extends free service
+timed service -> extends special service
+receipt -> strong entities: customer, special service
+Q&A section -> strong entity: customer
+access counts -> strong entity: free service
+
+
+2.
+The list of all the relationship sets:
+request: relating customer with special service
+receipt service: relating receipt with special service
+receipt customer: relating receipt with customer 
+belongs to: relating Q&A section with customer
+URL access: relating access counts with free service
+
+
+3.
+The list of all the entity sets and their attributes:
+customer: with attributes (ID, first name, last name, contact number)
+free service: with attributes (URL, tinyURL, creation date)
+special service: with extra attributes on top of free service’s attributes (validity, invalidation date)
+timed-links service: with extra attributes on top of special service’s attributes (duration)
+receipt: with attributes (cost)
+Q&A section: with attributes (question, answer)
+access counts: with attributes (from Iran, not from Iran)
+
+The list of all the relationship sets and their attributes:
+request: with attributes (state)
+receipt service
+receipt customer
+belongs to
+
+
+4.
+The types and default values of all the attributes of the entities:
+customer (ID: INT, first name: VARCHAR (45), last name: VARCHAR (45), contact number: CHAR (11))
+free service (URL: VARCHAR (100), tinyURL: VARCHAR (100) (default to ‘not defined’), creation date: TIMEDATE)
+special service (…, validity: INT (default to 1), invalidation date: DATETIME (default to CURDATE() by a trigger))
+timed-links service: attributes (…, duration: INT (default to 10 (days)))
+receipt (request ID: CHAR(n), cost: INT (default to 0))
+Q&A section (question: VARCHAR(n), answer: VARCHAR(n))
+access counts (from Iran: INT (default to 0), not from Iran: INT (default to 0))
+
+
+5.
+./5.png
+
+
+6.
+CREATE TABLE `customer` (
+  `ID` int NOT NULL,
+  `firstName` varchar(45) NOT NULL,
+  `lastName` varchar(45) NOT NULL,
+  `contactNumber` varchar(11) NOT NULL,
+  PRIMARY KEY (`ID`)
+);
+
+CREATE TABLE `Q&A_section` (
+  `ID` int NOT NULL,
+  `question` varchar(100) NOT NULL,
+  `answer` varchar(100) NOT NULL,
+  PRIMARY KEY (`ID`,`question`),
+  CONSTRAINT `requesterID` FOREIGN KEY (`ID`) REFERENCES `customer` (`ID`)
+);
+
+CREATE TABLE `free_service` (
+  `URL` varchar(45) NOT NULL,
+  `tinyURL` varchar(45) NOT NULL DEFAULT 'not defined',
+  `creationDate` date NOT NULL,
+  PRIMARY KEY (`URL`,`tinyURL`)
+);
+
+CREATE TABLE `special_service` (
+  `URL` varchar(45) NOT NULL,
+  `tinyURL` varchar(45) NOT NULL DEFAULT 'not defined',
+  `validity` smallint DEFAULT '1',
+  `invalidationDate` date DEFAULT NULL,
+  PRIMARY KEY (`tinyURL`,`URL`),
+  KEY `URL_idx` (`URL`),
+  CONSTRAINT `URL` FOREIGN KEY (`URL`) REFERENCES `free_service` (`URL`)
+);
+
+CREATE TABLE `timed_service` (
+  `URL` varchar(45) NOT NULL,
+  `tinyURL` varchar(45) NOT NULL,
+  `duration` int DEFAULT '10',
+  PRIMARY KEY (`URL`,`tinyURL`),
+  CONSTRAINT `service` FOREIGN KEY (`URL`) REFERENCES `special_service` (`URL`)
+);
+
+CREATE TABLE `access_counts` (
+  `URL` varchar(45) NOT NULL,
+  `tinyURL` varchar(45) NOT NULL,
+  `fromIran` int DEFAULT '0',
+  `notFromIran` int DEFAULT '0',
+  PRIMARY KEY (`URL`,`tinyURL`),
+  CONSTRAINT `access service` FOREIGN KEY (`URL`) REFERENCES `free_service` (`URL`)
+);
+
+CREATE TABLE `receipt` (
+  `requesterID` int NOT NULL,
+  `URL` varchar(45) NOT NULL,
+  `tinyURL` varchar(45) NOT NULL,
+  `cost` int DEFAULT '0',
+  PRIMARY KEY (`requesterID`,`URL`,`tinyURL`),
+  KEY `tiniedURL_idx` (`URL`),
+  CONSTRAINT `customerID` FOREIGN KEY (`requesterID`) REFERENCES `customer` (`ID`),
+  CONSTRAINT `tiniedURL` FOREIGN KEY (`URL`) REFERENCES `special_service` (`URL`)
+);
+
+CREATE TABLE `request` (
+  `requesterID` int NOT NULL,
+  `URL` varchar(45) NOT NULL,
+  `tinyURL` varchar(45) NOT NULL,
+  `state` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`requesterID`,`URL`,`tinyURL`),
+  KEY `requestedURL_idx` (`URL`),
+  CONSTRAINT `requestedURL` FOREIGN KEY (`URL`) REFERENCES `special_service` (`URL`),
+  CONSTRAINT `requesterID` FOREIGN KEY (`requesterID`) REFERENCES `customer` (`ID`)
+);
+
+
+7.
+./7/
+
+
+8.
+CREATE DEFINER=`root`@`%` TRIGGER `free_service_BEFORE_INSERT` BEFORE INSERT ON `free_service` FOR EACH ROW BEGIN
+	SET NEW.creationDate = CURDATE();
+END;
+
+CREATE DEFINER=`root`@`%` TRIGGER `special_service_BEFORE_UPDATE` BEFORE UPDATE ON `special_service` FOR EACH ROW BEGIN
+	IF NEW.validity <> OLD.validity THEN
+		SET NEW.invalidationDate = CURDATE();
+	END IF;
+END;

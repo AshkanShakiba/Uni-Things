@@ -27,3 +27,9 @@ University Documents, such as lectures, homework, projects, etc.
 <a href="4- Mobile Programming"> Mobile Programming | برنامه‌نویسی دستگاه‌های سیار </a>  
 <a href="4- Principles & Applications of Artificial Intelligence"> Principles & Applications of Artificial Intelligence | مبانی و کاربردهای هوش مصنوعی </a>  
 <a href="4- Software Engineering 1"> Software Engineering 1 | مهندسی نرم‌افزار ۱ </a>  
+<a href="5- Algorithm Design"> Algorithm Design | طراحی الگوریتم‌ها </a>  
+<a href="5- Database Design"> Database Design | طراحی پایگاه داده‌ها </a>  
+<a href="5- General English 2"> General English 2 | زبان ۲ </a>  
+<a href="5- History of Islamic Culture & Civilization"> History of Islamic Culture & Civilization | تاریخ فرهنگ و تمدن اسلامی </a>  
+<a href="5- Microprocessor and Assembly"> Microprocessor and Assembly | ریزپردازنده و اسمبلی </a>  
+<a href="5- Operating Systems"> Operating Systems | سیستم‌های عامل </a>  
